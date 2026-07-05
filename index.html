@@ -1,0 +1,1463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Juris Ralph P. Alson - Full-Stack Developer focused on infrastructure, cybersecurity, systems, and secure application deployment." />
+  <title>Juris Ralph P. Alson | Full-Stack Developer</title>
+
+  <link rel="preconnect" href="[cdnjs.cloudflare.com](https://cdnjs.cloudflare.com)" />
+  <link
+    rel="stylesheet"
+    href="[cdnjs.cloudflare.com](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css)"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/20I1MYS0G8zXHdLrvJ2zsmUu5Pjz0U1W9bLz8QfW6KPRqP0H4R5o0v3lWQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <style>
+    :root {
+      --bg: #0f172a;
+      --bg-deep: #020617;
+      --panel: #111c31;
+      --panel-soft: #162238;
+      --panel-glass: rgba(15, 23, 42, 0.78);
+      --text: #e5edf8;
+      --muted: #94a3b8;
+      --muted-2: #64748b;
+      --line: rgba(148, 163, 184, 0.18);
+      --cyan: #22d3ee;
+      --cyan-strong: #06b6d4;
+      --green: #22c55e;
+      --green-soft: rgba(34, 197, 94, 0.14);
+      --cyan-soft: rgba(34, 211, 238, 0.14);
+      --danger: #fb7185;
+      --shadow: 0 24px 80px rgba(2, 6, 23, 0.45);
+      --radius-xl: 28px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --radius-sm: 12px;
+      --container: 1160px;
+      --transition: 220ms ease;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
+    body {
+      min-height: 100vh;
+      max-width: 100%;
+      overflow-x: hidden;
+      background:
+        radial-gradient(circle at top left, rgba(34, 211, 238, 0.12), transparent 34rem),
+        radial-gradient(circle at 82% 8%, rgba(34, 197, 94, 0.12), transparent 28rem),
+        linear-gradient(180deg, #0f172a 0%, #08111f 52%, #020617 100%);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      background-image:
+        linear-gradient(rgba(148, 163, 184, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(148, 163, 184, 0.04) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), transparent 82%);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img,
+    svg {
+      max-width: 100%;
+      display: block;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    .container {
+      width: min(var(--container), calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+      background: rgba(15, 23, 42, 0.76);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      min-height: 44px;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(34, 211, 238, 0.42);
+      border-radius: 14px;
+      background:
+        linear-gradient(135deg, rgba(34, 211, 238, 0.16), rgba(34, 197, 94, 0.08)),
+        rgba(15, 23, 42, 0.7);
+      color: var(--cyan);
+      box-shadow: 0 0 34px rgba(34, 211, 238, 0.12);
+    }
+
+    .brand-text {
+      font-size: 0.98rem;
+      color: var(--text);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      padding: 0 13px;
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      font-weight: 650;
+      transition: color var(--transition), background var(--transition), transform var(--transition);
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--cyan);
+      background: rgba(34, 211, 238, 0.09);
+      transform: translateY(-1px);
+      outline: none;
+    }
+
+    .hero {
+      min-height: calc(100vh - 76px);
+      display: grid;
+      align-items: center;
+      padding: 92px 0 70px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.9fr);
+      align-items: center;
+      gap: 54px;
+    }
+
+    .eyebrow {
+      width: fit-content;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 22px;
+      padding: 8px 13px;
+      border: 1px solid rgba(34, 211, 238, 0.24);
+      border-radius: 999px;
+      background: rgba(34, 211, 238, 0.07);
+      color: var(--cyan);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow i {
+      color: var(--green);
+    }
+
+    .hero h1 {
+      max-width: 760px;
+      font-size: clamp(3rem, 8vw, 6.8rem);
+      line-height: 0.92;
+      letter-spacing: -0.085em;
+      font-weight: 900;
+    }
+
+    .hero h1 span {
+      display: block;
+      background: linear-gradient(90deg, #f8fafc 0%, #dbeafe 42%, #22d3ee 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-title {
+      margin-top: 22px;
+      color: var(--green);
+      font-size: clamp(1.1rem, 2vw, 1.45rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-copy {
+      max-width: 660px;
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .btn {
+      min-height: 48px;
+      min-width: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 18px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      font-weight: 800;
+      transition: transform var(--transition), border-color var(--transition), background var(--transition), color var(--transition), box-shadow var(--transition);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--cyan), var(--green));
+      color: #04111f;
+      box-shadow: 0 18px 42px rgba(34, 211, 238, 0.18);
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus-visible {
+      transform: translateY(-3px);
+      box-shadow: 0 22px 58px rgba(34, 197, 94, 0.2);
+      outline: none;
+    }
+
+    .btn-ghost {
+      border-color: rgba(148, 163, 184, 0.22);
+      background: rgba(15, 23, 42, 0.62);
+      color: var(--text);
+    }
+
+    .btn-ghost:hover,
+    .btn-ghost:focus-visible {
+      border-color: rgba(34, 211, 238, 0.48);
+      color: var(--cyan);
+      background: rgba(34, 211, 238, 0.08);
+      transform: translateY(-3px);
+      outline: none;
+    }
+
+    .social-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 26px;
+    }
+
+    .social-link {
+      width: 46px;
+      height: 46px;
+      display: inline-grid;
+      place-items: center;
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      border-radius: 15px;
+      background: rgba(15, 23, 42, 0.72);
+      color: var(--muted);
+      transition: transform var(--transition), color var(--transition), border-color var(--transition), background var(--transition), box-shadow var(--transition);
+    }
+
+    .social-link:hover,
+    .social-link:focus-visible {
+      color: var(--cyan);
+      border-color: rgba(34, 211, 238, 0.48);
+      background: rgba(34, 211, 238, 0.08);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 38px rgba(34, 211, 238, 0.1);
+      outline: none;
+    }
+
+    .hero-panel {
+      position: relative;
+      isolation: isolate;
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      border-radius: var(--radius-xl);
+      background:
+        linear-gradient(145deg, rgba(34, 211, 238, 0.1), transparent 36%),
+        linear-gradient(315deg, rgba(34, 197, 94, 0.1), transparent 34%),
+        rgba(15, 23, 42, 0.78);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .hero-panel::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      z-index: -1;
+      background: linear-gradient(135deg, rgba(34, 211, 238, 0.34), transparent, rgba(34, 197, 94, 0.22));
+      opacity: 0.7;
+    }
+
+    .terminal-top {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 18px 20px;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.14);
+      background: rgba(2, 6, 23, 0.28);
+    }
+
+    .dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: var(--danger);
+    }
+
+    .dot:nth-child(2) {
+      background: #fbbf24;
+    }
+
+    .dot:nth-child(3) {
+      background: var(--green);
+    }
+
+    .terminal {
+      padding: 26px;
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      font-size: 0.93rem;
+    }
+
+    .terminal-line {
+      display: flex;
+      gap: 12px;
+      padding: 10px 0;
+      color: var(--muted);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.07);
+    }
+
+    .terminal-line:last-child {
+      border-bottom: 0;
+    }
+
+    .prompt {
+      color: var(--green);
+      white-space: nowrap;
+    }
+
+    .command {
+      color: var(--cyan);
+    }
+
+    .output {
+      color: var(--text);
+    }
+
+    .section {
+      padding: 94px 0;
+      scroll-margin-top: 92px;
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin-bottom: 34px;
+    }
+
+    .section-kicker {
+      color: var(--cyan);
+      font-size: 0.82rem;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .section h2 {
+      margin-top: 9px;
+      font-size: clamp(2rem, 4vw, 3.25rem);
+      line-height: 1;
+      letter-spacing: -0.06em;
+    }
+
+    .section-heading p {
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .skill-card,
+    .experience-card,
+    .project-card,
+    .cert-card,
+    .contact-card {
+      border: 1px solid rgba(148, 163, 184, 0.16);
+      background:
+        linear-gradient(145deg, rgba(34, 211, 238, 0.055), transparent 38%),
+        rgba(17, 28, 49, 0.76);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 18px 52px rgba(2, 6, 23, 0.22);
+    }
+
+    .skill-card {
+      padding: 24px;
+      transition: transform var(--transition), border-color var(--transition), background var(--transition);
+    }
+
+    .skill-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(34, 211, 238, 0.34);
+      background:
+        linear-gradient(145deg, rgba(34, 211, 238, 0.1), transparent 42%),
+        rgba(17, 28, 49, 0.88);
+    }
+
+    .card-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+      font-size: 1.05rem;
+      letter-spacing: -0.02em;
+    }
+
+    .card-title i {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      background: rgba(34, 211, 238, 0.1);
+      color: var(--cyan);
+    }
+
+    .tag-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tag {
+      min-height: 34px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 11px;
+      border: 1px solid rgba(148, 163, 184, 0.16);
+      border-radius: 999px;
+      background: rgba(2, 6, 23, 0.24);
+      color: #cbd5e1;
+      font-size: 0.86rem;
+      font-weight: 700;
+      transition: color var(--transition), border-color var(--transition), background var(--transition), transform var(--transition);
+    }
+
+    .tag:hover {
+      color: var(--cyan);
+      border-color: rgba(34, 211, 238, 0.38);
+      background: rgba(34, 211, 238, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .tag.green {
+      color: #bbf7d0;
+      background: var(--green-soft);
+      border-color: rgba(34, 197, 94, 0.24);
+    }
+
+    .experience-card {
+      padding: 28px;
+    }
+
+    .experience-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 22px;
+      margin-bottom: 28px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.13);
+    }
+
+    .experience-top h3 {
+      font-size: clamp(1.35rem, 2vw, 1.8rem);
+      letter-spacing: -0.04em;
+    }
+
+    .experience-top p {
+      margin-top: 8px;
+      color: var(--muted);
+    }
+
+    .role-badge {
+      min-height: 40px;
+      display: inline-flex;
+      align-items: center;
+      white-space: nowrap;
+      padding: 8px 13px;
+      border: 1px solid rgba(34, 197, 94, 0.28);
+      border-radius: 999px;
+      color: #bbf7d0;
+      background: rgba(34, 197, 94, 0.08);
+      font-size: 0.84rem;
+      font-weight: 850;
+    }
+
+    .ops-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .ops-group {
+      padding: 20px;
+      border: 1px solid rgba(148, 163, 184, 0.12);
+      border-radius: var(--radius-md);
+      background: rgba(2, 6, 23, 0.18);
+    }
+
+    .ops-group h4 {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+      color: var(--cyan);
+      font-size: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .ops-group ul {
+      display: grid;
+      gap: 10px;
+      list-style: none;
+    }
+
+    .ops-group li {
+      position: relative;
+      padding-left: 22px;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .ops-group li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.68em;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--cyan), var(--green));
+      box-shadow: 0 0 14px rgba(34, 211, 238, 0.35);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .project-card {
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
+      transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition), background var(--transition);
+    }
+
+    .project-card::after {
+      content: "";
+      position: absolute;
+      inset: auto -30% -42% 18%;
+      height: 180px;
+      background: radial-gradient(circle, rgba(34, 211, 238, 0.16), transparent 62%);
+      pointer-events: none;
+    }
+
+    .project-card:hover,
+    .project-card:focus-within {
+      transform: translateY(-7px);
+      border-color: rgba(34, 211, 238, 0.38);
+      box-shadow: 0 30px 72px rgba(2, 6, 23, 0.38);
+      background:
+        linear-gradient(145deg, rgba(34, 211, 238, 0.095), transparent 40%),
+        rgba(17, 28, 49, 0.92);
+    }
+
+    .project-icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 18px;
+      border-radius: 16px;
+      background: rgba(34, 211, 238, 0.1);
+      color: var(--cyan);
+      font-size: 1.2rem;
+    }
+
+    .project-card h3 {
+      font-size: 1.25rem;
+      letter-spacing: -0.035em;
+      margin-bottom: 12px;
+    }
+
+    .project-card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 18px;
+    }
+
+    .project-points {
+      display: grid;
+      gap: 9px;
+      margin-bottom: 20px;
+      list-style: none;
+    }
+
+    .project-points li {
+      position: relative;
+      padding-left: 19px;
+      color: #b6c3d4;
+      font-size: 0.9rem;
+    }
+
+    .project-points li::before {
+      content: ">";
+      position: absolute;
+      left: 0;
+      color: var(--green);
+      font-weight: 900;
+    }
+
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: auto;
+      padding-top: 20px;
+    }
+
+    .project-links a {
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 10px 13px;
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      border-radius: 999px;
+      color: var(--text);
+      background: rgba(2, 6, 23, 0.24);
+      font-size: 0.88rem;
+      font-weight: 800;
+      transition: color var(--transition), border-color var(--transition), background var(--transition), transform var(--transition);
+    }
+
+    .project-links a:hover,
+    .project-links a:focus-visible {
+      color: var(--cyan);
+      border-color: rgba(34, 211, 238, 0.42);
+      background: rgba(34, 211, 238, 0.08);
+      transform: translateY(-2px);
+      outline: none;
+    }
+
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .cert-card {
+      min-height: 128px;
+      padding: 18px;
+      transition: transform var(--transition), border-color var(--transition), background var(--transition);
+    }
+
+    .cert-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(34, 197, 94, 0.34);
+      background:
+        linear-gradient(145deg, rgba(34, 197, 94, 0.08), transparent 48%),
+        rgba(17, 28, 49, 0.9);
+    }
+
+    .cert-card i {
+      color: var(--green);
+      margin-bottom: 12px;
+      font-size: 1.2rem;
+    }
+
+    .cert-card h3 {
+      font-size: 0.98rem;
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+    }
+
+    .cert-card p {
+      margin-top: 9px;
+      color: var(--muted);
+      font-size: 0.84rem;
+      font-weight: 700;
+    }
+
+    .education-strip {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-top: 18px;
+      padding: 20px 22px;
+      border: 1px solid rgba(34, 211, 238, 0.18);
+      border-radius: var(--radius-lg);
+      background: rgba(34, 211, 238, 0.055);
+    }
+
+    .education-strip strong {
+      display: block;
+      font-size: 1rem;
+    }
+
+    .education-strip span {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 0.86fr 1.14fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .contact-card {
+      padding: 26px;
+    }
+
+    .contact-card h3 {
+      font-size: 1.35rem;
+      letter-spacing: -0.04em;
+      margin-bottom: 12px;
+    }
+
+    .contact-card p {
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 12px;
+      list-style: none;
+    }
+
+    .contact-list a {
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 12px;
+      border: 1px solid rgba(148, 163, 184, 0.14);
+      border-radius: 14px;
+      color: var(--text);
+      background: rgba(2, 6, 23, 0.18);
+      transition: color var(--transition), border-color var(--transition), background var(--transition), transform var(--transition);
+    }
+
+    .contact-list a:hover,
+    .contact-list a:focus-visible {
+      color: var(--cyan);
+      border-color: rgba(34, 211, 238, 0.38);
+      background: rgba(34, 211, 238, 0.075);
+      transform: translateY(-2px);
+      outline: none;
+    }
+
+    .contact-list i {
+      color: var(--green);
+      width: 18px;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 14px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .field {
+      display: grid;
+      gap: 8px;
+    }
+
+    .field label {
+      color: #cbd5e1;
+      font-size: 0.88rem;
+      font-weight: 800;
+    }
+
+    .field input,
+    .field textarea {
+      width: 100%;
+      min-height: 48px;
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      border-radius: 14px;
+      background: rgba(2, 6, 23, 0.24);
+      color: var(--text);
+      padding: 12px 14px;
+      outline: none;
+      transition: border-color var(--transition), box-shadow var(--transition), background var(--transition);
+    }
+
+    .field textarea {
+      min-height: 148px;
+      resize: vertical;
+    }
+
+    .field input:focus,
+    .field textarea:focus {
+      border-color: rgba(34, 211, 238, 0.52);
+      background: rgba(2, 6, 23, 0.34);
+      box-shadow: 0 0 0 4px rgba(34, 211, 238, 0.08);
+    }
+
+    .form-note {
+      color: var(--muted-2);
+      font-size: 0.84rem;
+    }
+
+    .footer {
+      padding: 26px 0;
+      border-top: 1px solid rgba(148, 163, 184, 0.12);
+      color: var(--muted-2);
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 980px) {
+      .nav {
+        min-height: auto;
+        padding: 14px 0;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        width: 100%;
+        padding: 8px;
+        overflow-x: auto;
+        border: 1px solid rgba(148, 163, 184, 0.12);
+        border-radius: 18px;
+        background: rgba(2, 6, 23, 0.2);
+      }
+
+      .nav-links a {
+        white-space: nowrap;
+      }
+
+      .hero {
+        min-height: auto;
+        padding-top: 68px;
+      }
+
+      .hero-grid,
+      .contact-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .skills-grid,
+      .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .cert-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 720px) {
+      .container {
+        width: min(100% - 28px, var(--container));
+      }
+
+      .section {
+        padding: 72px 0;
+      }
+
+      .hero {
+        padding: 54px 0 54px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.65rem, 16vw, 4.25rem);
+      }
+
+      .hero-copy {
+        font-size: 0.98rem;
+      }
+
+      .hero-actions,
+      .social-row {
+        width: 100%;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .social-link {
+        flex: 1 1 46px;
+      }
+
+      .terminal {
+        padding: 18px;
+        font-size: 0.82rem;
+      }
+
+      .terminal-line {
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .skills-grid,
+      .projects-grid,
+      .ops-grid,
+      .cert-grid,
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .experience-top {
+        flex-direction: column;
+      }
+
+      .role-badge {
+        white-space: normal;
+      }
+
+      .education-strip {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary navigation">
+      <a class="brand" href="#home" aria-label="Juris Ralph P. Alson home">
+        <span class="brand-mark">JA</span>
+        <span class="brand-text">Juris Alson</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <p class="eyebrow"><i class="fa-solid fa-shield-halved"></i> Secure Systems / Full-Stack Build</p>
+
+          <h1>
+            Juris Ralph
+            <span>P. Alson</span>
+          </h1>
+
+          <p class="hero-title">Full-Stack Developer | Infrastructure &amp; Security</p>
+
+          <p class="hero-copy">
+            I build secure web and mobile systems with full-stack application logic, database integration,
+            endpoint-focused infrastructure awareness, authentication hardening, and deployment-ready architecture.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">
+              View My Work
+              <i class="fa-solid fa-arrow-down"></i>
+            </a>
+            <a class="btn btn-ghost" href="mailto:jurisalson@gmail.com">
+              <i class="fa-solid fa-envelope"></i>
+              Email
+            </a>
+          </div>
+
+          <div class="social-row" aria-label="Contact links">
+            <a class="social-link" href="mailto:jurisalson@gmail.com" aria-label="Email Juris">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+            <a class="social-link" href="tel:+639628655157" aria-label="Call Juris">
+              <i class="fa-solid fa-phone"></i>
+            </a>
+            <a class="social-link" href="[linkedin.com](https://linkedin.com/in/JurisAlson)" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a class="social-link" href="[github.com](https://github.com/JurisAlson)" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+              <i class="fa-brands fa-github"></i>
+            </a>
+          </div>
+        </div>
+
+        <aside class="hero-panel" aria-label="Technical profile terminal">
+          <div class="terminal-top" aria-hidden="true">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+
+          <div class="terminal">
+            <div class="terminal-line">
+              <span class="prompt">juris@portfolio:~$</span>
+              <span class="command">whoami</span>
+            </div>
+            <div class="terminal-line">
+              <span class="prompt">output</span>
+              <span class="output">Full-stack developer focused on secure systems</span>
+            </div>
+            <div class="terminal-line">
+              <span class="prompt">stack</span>
+              <span class="output">Next.js / TypeScript / PHP / MySQL / Flutter / Firebase</span>
+            </div>
+            <div class="terminal-line">
+              <span class="prompt">security</span>
+              <span class="output">JWT, HttpOnly cookies, AES, CSRF controls, OWASP practices</span>
+            </div>
+            <div class="terminal-line">
+              <span class="prompt">infra</span>
+              <span class="output">Linux Enterprise, Windows Server, AD, VMware, GCP</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">Core Skills</p>
+          <h2>Technical capability across security, development, systems, and databases.</h2>
+          <p>
+            Focused strictly on applied engineering skills: secure coding, infrastructure support,
+            application development, database-backed systems, and cloud-connected platforms.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+          <article class="skill-card">
+            <h3 class="card-title"><i class="fa-solid fa-user-secret"></i> Cybersecurity &amp; Security</h3>
+            <div class="tag-cloud">
+              <span class="tag green">Kali Linux</span>
+              <span class="tag">Penetration Testing Basics</span>
+              <span class="tag">Network Security</span>
+              <span class="tag">Cryptography</span>
+              <span class="tag">Cryptanalysis</span>
+              <span class="tag">OWASP Practices</span>
+              <span class="tag">AES Encryption</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <h3 class="card-title"><i class="fa-solid fa-code"></i> Programming &amp; Development</h3>
+            <div class="tag-cloud">
+              <span class="tag green">C#</span>
+              <span class="tag">Python</span>
+              <span class="tag">C++</span>
+              <span class="tag">Java</span>
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">Flutter</span>
+              <span class="tag">REST APIs</span>
+              <span class="tag">TensorFlow</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <h3 class="card-title"><i class="fa-solid fa-server"></i> Systems &amp; Databases</h3>
+            <div class="tag-cloud">
+              <span class="tag green">PostgreSQL</span>
+              <span class="tag">Firebase Firestore</span>
+              <span class="tag">Firebase Realtime DB</span>
+              <span class="tag">Windows Server</span>
+              <span class="tag">Active Directory</span>
+              <span class="tag">VMware</span>
+              <span class="tag">Google Cloud Platform</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">Experience</p>
+          <h2>IT operations work across enterprise endpoints, infrastructure, access, and security readiness.</h2>
+        </div>
+
+        <article class="experience-card">
+          <div class="experience-top">
+            <div>
+              <h3>Concentrix Nuvali - IT Operations Intern</h3>
+              <p>Enterprise workstation support, Active Directory operations, endpoint hardening, system imaging, and production troubleshooting.</p>
+            </div>
+            <span class="role-badge">Infrastructure / Security Operations</span>
+          </div>
+
+          <div class="ops-grid">
+            <div class="ops-group">
+              <h4><i class="fa-solid fa-network-wired"></i> Systems Administration</h4>
+              <ul>
+                <li>Supported Linux Enterprise, Windows Server, Active Directory, and VMware virtual machine environments.</li>
+                <li>Performed Active Directory user and account support, access management, and system configuration tasks.</li>
+                <li>Assisted with system imaging, software installation, patching, and device provisioning for production users.</li>
+              </ul>
+            </div>
+
+            <div class="ops-group">
+              <h4><i class="fa-solid fa-cloud"></i> Cloud &amp; Security Operations</h4>
+              <ul>
+                <li>Worked with Google Cloud Platform and Firebase services for cloud-connected application and system workflows.</li>
+                <li>Maintained endpoint security through BIOS configuration, device hardening, software updates, and policy enforcement.</li>
+                <li>Ensured workstation compliance, security standards, and operational readiness across deployed systems.</li>
+              </ul>
+            </div>
+
+            <div class="ops-group">
+              <h4><i class="fa-solid fa-desktop"></i> Workstation Deployment</h4>
+              <ul>
+                <li>Managed enterprise workstation deployment, maintenance, and troubleshooting in a production environment.</li>
+                <li>Prepared production devices with required software, system configurations, and operational baselines.</li>
+                <li>Supported endpoint readiness for users across active operational areas.</li>
+              </ul>
+            </div>
+
+            <div class="ops-group">
+              <h4><i class="fa-solid fa-screwdriver-wrench"></i> Incident Resolution</h4>
+              <ul>
+                <li>Diagnosed hardware, network, and operating system issues to minimize operational downtime.</li>
+                <li>Monitored and resolved technical incidents affecting workstation availability and user productivity.</li>
+                <li>Escalated infrastructure-related issues when deeper remediation or administrative intervention was required.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">Projects</p>
+          <h2>Secure, API-driven, and deployment-minded application builds.</h2>
+          <p>
+            Each project emphasizes applied implementation: authentication, database-backed operations,
+            mobile/web interfaces, API design, encrypted data handling, and production-style architecture.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card">
+            <div class="project-icon"><i class="fa-solid fa-recycle"></i></div>
+            <h3>EcoScrap Mobile Application</h3>
+            <p>Capstone logistics platform connecting Residents, Collectors, and Junkshops for recyclable waste trading and pickup workflows.</p>
+
+            <ul class="project-points">
+              <li>Integrated Google Maps API for real-time pickup requests and material tracking.</li>
+              <li>Built encrypted user management with AES protection and automated PII purging.</li>
+              <li>Integrated TensorFlow MobileNetV2 image classification for recyclable material identification.</li>
+            </ul>
+
+            <div class="tag-cloud">
+              <span class="tag green">Flutter</span>
+              <span class="tag">Google Maps API</span>
+              <span class="tag">AES Encryption</span>
+              <span class="tag">TensorFlow MobileNetV2</span>
+            </div>
+
+            <div class="project-links">
+              <a href="https://github.com/JurisAlson/ecoscrap_app.git" aria-label="EcoScrap GitHub repository"><i class="fa-brands fa-github"></i> GitHub</a>
+              <a href="https://eric11101.github.io/Ecoscrap/?fbclid=IwY2xjawS2r4dleHRuA2FlbQIxMABicmlkETF0a0NwdTZSY2J2UEtFZmNYc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHiSOOYg90j5kH1mx37e2xrxMOYdLx1MNs7B6Q-_vgVXIscrXydTUyM9YRGHd_aem_YmuKRcdl5lkTbRYkB6JYTw#download" aria-label="EcoScrap live demo"><i class="fa-solid fa-up-right-from-square"></i> Live Demo</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-icon"><i class="fa-solid fa-diagram-project"></i></div>
+            <h3>API-Based Android &amp; Web Systems</h3>
+            <p>Full-stack web and mobile systems including a Twitter clone, marketplace platform, appointment flows, and CRUD-backed interfaces.</p>
+
+            <ul class="project-points">
+              <li>Developed secure authentication and CRUD operations through RESTful API endpoints.</li>
+              <li>Implemented database-backed workflows using PHP and MySQL.</li>
+              <li>Built responsive interfaces with JavaScript, HTML/CSS, Xamarin, and Android Studio.</li>
+            </ul>
+
+            <div class="tag-cloud">
+              <span class="tag green">PHP</span>
+              <span class="tag">MySQL</span>
+              <span class="tag">RESTful APIs</span>
+              <span class="tag">Xamarin</span>
+            </div>
+
+            <div class="project-links">
+              <a href="#" aria-label="API systems GitHub repository"><i class="fa-brands fa-github"></i> GitHub</a>
+              <a href="" aria-label="API systems live demo"><i class="fa-solid fa-up-right-from-square"></i> Live Demo</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-icon"><i class="fa-solid fa-fingerprint"></i></div>
+            <h3>SecureAuth</h3>
+            <p>Secure authentication system using modern frontend architecture, token-based sessions, and browser security controls.</p>
+
+            <ul class="project-points">
+              <li>Developed authentication flows using Next.js, TypeScript, JWT, and HttpOnly cookies.</li>
+              <li>Implemented CSRF protection, password hashing, input validation, and secure session handling.</li>
+              <li>Applied OWASP-recommended practices for authentication and request safety.</li>
+            </ul>
+
+            <div class="tag-cloud">
+              <span class="tag green">Next.js</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">JWT</span>
+              <span class="tag">OWASP Practices</span>
+            </div>
+
+            <div class="project-links">
+              <a href="https://github.com/JurisAlson/SecureAuth.git" aria-label="SecureAuth GitHub repository"><i class="fa-brands fa-github"></i> GitHub</a>
+              <a href="#"><i class="fa-solid fa-up-right-from-square"></i> Live Demo</a>
+            </div>
+          </article>
+        </div>
+      </div>#
+    </section>
+
+    <section class="section" id="certifications">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">Certifications</p>
+          <h2>Security, networking, cloud, DevOps, and Linux certification track.</h2>
+        </div>
+
+        <div class="cert-grid">
+          <article class="cert-card">
+            <i class="fa-brands fa-cisco"></i>
+            <h3>Ethical Hacking Certification</h3>
+            <p>Cisco - 03/29/2025</p>
+          </article>
+
+          <article class="cert-card">
+            <i class="fa-solid fa-network-wired"></i>
+            <h3>CCNA: Introduction to Networks</h3>
+            <p>Cisco - 02/07/2025</p>
+          </article>
+
+          <article class="cert-card">
+            <i class="fa-solid fa-route"></i>
+            <h3>CCNA: Switching, Routing, and Wireless</h3>
+            <p>Cisco - 07/21/2025</p>
+          </article>
+
+          <article class="cert-card">
+            <i class="fa-brands fa-google"></i>
+            <h3>Cloud Computing Foundations Certificate</h3>
+            <p>Google - 03/21/2025</p>
+          </article>
+
+          <article class="cert-card">
+            <i class="fa-brands fa-google"></i>
+            <h3>Cybersecurity Professional Certificate</h3>
+            <p>Google / Coursera - 06/17/2026</p>
+          </article>
+
+          <article class="cert-card">
+            <i class="fa-solid fa-layer-group"></i>
+            <h3>Full Stack Developer</h3>
+            <p>IBM / Coursera - Ongoing</p>
+          </article>
+
+          <article class="cert-card">
+            <i class="fa-brands fa-microsoft"></i>
+            <h3>Delivery and Managing Builds with Azure DevOps</h3>
+            <p>Coursera - 05/06/2026</p>
+          </article>
+
+          <article class="cert-card">
+            <i class="fa-brands fa-linux"></i>
+            <h3>Linux File Management for DevOps</h3>
+            <p>Coursera - 05/05/2026</p>
+          </article>
+        </div>
+
+        <div class="education-strip">
+          <div>
+            <strong>Mapua Malayan Colleges Laguna</strong>
+            <span>Bachelor of Science in Information Technology</span>
+          </div>
+          <div>
+            <strong>Cybersecurity Specialization</strong>
+            <span>Completed - November 27, 2025</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">Contact</p>
+          <h2>Build-focused contact for development, infrastructure, and security work.</h2>
+        </div>
+
+        <div class="contact-wrap">
+          <aside class="contact-card">
+            <h3>Direct Channels</h3>
+            <p>Use the direct links below for email, phone, GitHub, or LinkedIn access.</p>
+
+            <ul class="contact-list">
+              <li>
+                <a href="mailto:jurisalson@gmail.com">
+                  <i class="fa-solid fa-envelope"></i>
+                  jurisalson@gmail.com
+                </a>
+              </li>
+              <li>
+                <a href="tel:+639628655157">
+                  <i class="fa-solid fa-phone"></i>
+                  +63 962 865 5157
+                </a>
+              </li>
+              <li>
+                <a href="[linkedin.com](https://linkedin.com/in/JurisAlson)" target="_blank" rel="noopener noreferrer">
+                  <i class="fa-brands fa-linkedin-in"></i>
+                  linkedin.com/in/JurisAlson
+                </a>
+              </li>
+              <li>
+                <a href="[github.com](https://github.com/JurisAlson)" target="_blank" rel="noopener noreferrer">
+                  <i class="fa-brands fa-github"></i>
+                  github.com/JurisAlson
+                </a>
+              </li>
+            </ul>
+          </aside>
+
+          <form class="contact-card contact-form" action="mailto:jurisalson@gmail.com" method="post" enctype="text/plain">
+            <div class="form-row">
+              <div class="field">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" placeholder="Your name" />
+              </div>
+
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="your@email.com" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="subject">Subject</label>
+              <input id="subject" name="subject" type="text" placeholder="Project, role, or technical inquiry" />
+            </div>
+
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Describe the system, stack, security scope, or deployment requirements."></textarea>
+            </div>
+
+            <button class="btn btn-primary" type="submit">
+              <i class="fa-solid fa-paper-plane"></i>
+              Send via Email Client
+            </button>
+
+            <p class="form-note">
+              Static form using mailto behavior. For production deployment, connect this form to a backend endpoint or serverless function.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 Juris Ralph P. Alson. Full-Stack Development | Infrastructure | Security.</p>
+    </div>
+  </footer>
+</body>
+</html>
