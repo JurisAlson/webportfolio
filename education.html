@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Education &amp; Credentials | Juris Ralph P. Alson</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --text: #e5edf8;
+      --muted: #94a3b8;
+      --cyan: #22d3ee;
+      --green: #22c55e;
+      --radius-lg: 22px;
+      --container: 1160px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: linear-gradient(180deg, #0f172a 0%, #020617 100%);
+      color: var(--text);
+      font-family: Inter, system-ui, sans-serif;
+      padding-bottom: 60px;
+    }
+    .container { width: min(var(--container), calc(100% - 40px)); margin-inline: auto; }
+    .site-header { border-bottom: 1px solid rgba(148, 163, 184, 0.12); background: rgba(15, 23, 42, 0.76); }
+    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; font-weight: 800; text-decoration: none; }
+    .brand-mark { width: 42px; height: 42px; display: grid; place-items: center; border: 1px solid rgba(34, 211, 238, 0.42); border-radius: 14px; color: var(--cyan); }
+    .nav-links { display: flex; gap: 6px; list-style: none; }
+    .nav-links a { display: inline-flex; align-items: center; padding: 10px 13px; color: var(--muted); text-decoration: none; font-weight: 650; }
+    .nav-links a:hover { color: var(--cyan); }
+    .page-title { padding: 60px 0 30px; }
+    .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+    .edu-card, .cert-card { border: 1px solid rgba(148, 163, 184, 0.16); background: rgba(17, 28, 49, 0.76); border-radius: var(--radius-lg); padding: 32px; }
+    .edu-card h2, .cert-card h2 { font-size: 1.6rem; margin-bottom: 20px; color: var(--cyan); }
+    .edu-item { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid rgba(148, 163, 184, 0.1); }
+    .cert-list { display: grid; gap: 12px; list-style: none; }
+    .cert-item { display: flex; align-items: center; gap: 12px; padding: 12px; border: 1px solid rgba(148, 163, 184, 0.1); border-radius: 12px; }
+    .cert-item i { color: var(--green); }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container">
+      <a class="brand" href="index.html"><span class="brand-mark">JA</span><span class="brand-text">Juris Alson</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html#skills">Skills</a></li>
+        <li><a href="index.html#experience">Experience</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="education.html" style="color: var(--cyan);">Education</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="page-title"><h1>Education &amp; Credentials</h1></section>
+    <div class="edu-grid">
+      <div class="edu-card">
+        <h2>Education</h2>
+        <div class="edu-item">
+          <h3>Mapúa Malayan Colleges Laguna</h3>
+          <p>Bachelor of Science in Information Technology</p>
+          <p style="color: var(--cyan);">Completed Cybersecurity Specialization - November 27, 2025</p>
+        </div>
+      </div>
+
+      <div class="cert-card">
+        <h2>Certificates</h2>
+        <ul class="cert-list">
+          <div class="cert-item"><i class="fa-solid fa-certificate"></i><div><h4>Ethical Hacking Certification - Cisco</h4><p>Issued: 03/29/2025</p></div></div>
+          <div class="cert-item"><i class="fa-solid fa-certificate"></i><div><h4>CCNA: Introduction to Networks - Cisco</h4><p>Issued: 02/07/2025</p></div></div>
+          <div class="cert-item"><i class="fa-solid fa-certificate"></i><div><h4>CCNA: Switching, Routing, and Wireless - Cisco</h4><p>Issued: 07/21/2025</p></div></div>
+          <div class="cert-item"><i class="fa-solid fa-certificate"></i><div><h4>Google: Cloud Computing Foundations Certificate</h4><p>Issued: 03/21/2025</p></div></div>
+          <div class="cert-item"><i class="fa-solid fa-certificate"></i><div><h4>Google: Cybersecurity Professional Certificate - Coursera</h4><p>Issued: 6/17/2026</p></div></div>
+          <div class="cert-item"><i class="fa-solid fa-certificate"></i><div><h4>IBM: Full Stack Developer - Coursera</h4><p>(On going)</p></div></div>
+          <div class="cert-item"><i class="fa-solid fa-certificate"></i><div><h4>Delivery and Managing Builds with Azure DevOps - Coursera</h4><p>Issued: 5/6/2026</p></div></div>
+          <div class="cert-item"><i class="fa-solid fa-certificate"></i><div><h4>Linux File Management for DevOps - Coursera</h4><p>Issued: 5/5/2026</p></div></div>
+        </ul>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

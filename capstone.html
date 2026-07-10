@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EcoScrap Project Showcase | Juris Ralph P. Alson</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --panel: #111c31;
+      --text: #e5edf8;
+      --muted: #94a3b8;
+      --cyan: #22d3ee;
+      --green: #22c55e;
+      --radius-lg: 22px;
+      --container: 1160px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: linear-gradient(180deg, #0f172a 0%, #020617 100%);
+      color: var(--text);
+      font-family: Inter, system-ui, sans-serif;
+      padding-bottom: 80px;
+    }
+    .container { width: min(var(--container), calc(100% - 40px)); margin-inline: auto; }
+    .site-header { border-bottom: 1px solid rgba(148, 163, 184, 0.12); background: rgba(15, 23, 42, 0.76); }
+    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; font-weight: 800; text-decoration: none; }
+    .brand-mark { width: 42px; height: 42px; display: grid; place-items: center; border: 1px solid rgba(34, 211, 238, 0.42); border-radius: 14px; color: var(--cyan); }
+    .nav-links a { padding: 10px 13px; color: var(--muted); text-decoration: none; font-weight: 650; }
+    .nav-links a:hover { color: var(--cyan); }
+    
+    .showcase-header { padding: 60px 0 20px; }
+    .showcase-header h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; letter-spacing: -0.06em; }
+    .showcase-header span { color: var(--cyan); }
+    
+    .showcase-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 32px; margin-top: 30px; }
+    .main-content, .sidebar-panel { border: 1px solid rgba(148, 163, 184, 0.16); background: rgba(17, 28, 49, 0.76); border-radius: var(--radius-lg); padding: 32px; }
+    
+    h2 { font-size: 1.5rem; margin-bottom: 16px; color: var(--cyan); letter-spacing: -0.02em; }
+    p { color: var(--muted); margin-bottom: 20px; font-size: 1.05rem; }
+    
+    .screenshot-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 24px; }
+    .screenshot-placeholder { background: rgba(2, 6, 23, 0.4); border: 2px dashed rgba(148, 163, 184, 0.2); border-radius: 12px; aspect-ratio: 16/9; display: grid; place-items: center; color: var(--muted-2); font-weight: 700; }
+    
+    .bullet-list { list-style: none; display: grid; gap: 12px; margin-bottom: 20px; }
+    .bullet-list li { position: relative; padding-left: 20px; color: var(--text); }
+    .bullet-list li::before { content: "→"; position: absolute; left: 0; color: var(--green); font-weight: 900; }
+    
+    .tech-tag { display: inline-block; padding: 6px 12px; background: rgba(34, 211, 238, 0.1); border-radius: 999px; font-size: 0.85rem; font-weight: 700; margin: 4px; color: var(--cyan); }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container">
+      <a class="brand" href="index.html"><span class="">JA</span><span class="brand-text">Juris Alson</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html#projects">Back to Portfolio</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <header class="showcase-header">
+      <h1>Project: <span>EcoScrap Mobile Platform</span></h1>
+    </header>
+
+    <div class="showcase-grid">
+      <div class="main-content">
+        <h2>Detailed Platform Overview</h2>
+        <p>EcoScrap functions as a comprehensive municipal recycling coordinator platform designed to optimize waste trading logistics between local municipal residential actors, collectors, and scrapyard operations.</p>
+        
+        <h2>Application Interface &amp; Screenshots</h2>
+        <div class="screenshot-grid">
+          <div class="screenshot-placeholder"><i class="fa-solid fa-image fa-2x"></i><br>Dashboard View</div>
+          <div class="screenshot-placeholder"><i class="fa-solid fa-image fa-2x"></i><br>Map Routing View</div>
+        </div>
+
+        <h2>Core Features Implemented</h2>
+        <ul class="bullet-list">
+          <li>Integrated Google Maps API for live local coordinate fetching, interactive waste pickup notifications, and scrap haul pathing tracking.</li>
+          <li>Built strict asset protection routines featuring symmetric AES cryptography models and structural PII automated zeroing paradigms.</li>
+          <li>Trained and integrated a deep neural computer vision pipeline via optimized TensorFlow MobileNetV2 files executing directly on native mobile endpoints.</li>
+        </ul>
+      </div>
+
+      <div class="sidebar-panel">
+        <h2>Tech Stack Details</h2>
+        <div style="margin-bottom: 24px;">
+          <span class="tech-tag">Flutter</span>
+          <span class="tech-tag">TensorFlow MobileNetV2</span>
+          <span class="tech-tag">Google Maps API</span>
+          <span class="tech-tag">AES Encryption</span>
+          <span class="tech-tag">Android Studio</span>
+        </div>
+
+        <h2>Project Assets</h2>
+        <ul class="bullet-list" style="font-size: 0.95rem;">
+          <li><a href="https://github.com/JurisAlson/EcoScrap" target="_blank" style="color: var(--cyan); text-decoration: none;"><i class="fa-brands fa-github"></i> GitHub Source Code Repository</a></li>
+          <li><a href="https://jurisalson.github.io/EcoScrap-Demo" target="_blank" style="color: var(--cyan); text-decoration: none;"><i class="fa-solid fa-rocket"></i> Launch Production Live Demo</a></li>
+        </ul>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
