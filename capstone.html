@@ -8,7 +8,7 @@
   <style>
     :root {
       --bg: #0f172a; --panel-bg: rgba(30, 41, 59, 0.6); --text-main: #e5edf8;
-      --text-muted: #94a3b8; --cyan: #22d3ee; --green: #22c55e;
+      --text-muted: #94a3b8; --cyan: #22d3ee;
     }
     body { background: radial-gradient(circle at top right, #1e293b, #020617); color: var(--text-main); font-family: 'Inter', system-ui, sans-serif; line-height: 1.6; padding-bottom: 80px; }
     .container { width: min(1160px, calc(100% - 48px)); margin-inline: auto; }
@@ -19,21 +19,22 @@
     .nav-links a { color: var(--text-muted); text-decoration: none; font-weight: 600; padding: 8px 16px; border-radius: 8px; transition: 0.2s; }
     .nav-links a:hover { color: var(--cyan); background: rgba(34, 211, 238, 0.05); }
 
-    /* Hero & Participation */
-    .showcase-header { padding: 60px 0; }
-    .role-tag { background: var(--cyan); color: var(--bg); padding: 4px 12px; border-radius: 6px; font-weight: 800; font-size: 0.8rem; text-transform: uppercase; }
-    
     /* Layout */
-    .showcase-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: 32px; }
+    .showcase-grid { display: grid; grid-template-columns: 1fr 320px; gap: 32px; margin-top: 40px; }
     .main-content, .sidebar-panel { background: var(--panel-bg); border: 1px solid rgba(34, 211, 238, 0.15); border-radius: 16px; padding: 32px; backdrop-filter: blur(10px); }
     
-    h2 { color: var(--cyan); margin: 24px 0 16px; display: flex; align-items: center; gap: 10px; }
-    .img-slot { background: #020617; border: 1px dashed #334155; border-radius: 8px; aspect-ratio: 16/9; display: grid; place-items: center; color: #475569; font-size: 0.8rem; }
-    .screenshot-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 20px; }
+    h2 { color: var(--cyan); margin: 32px 0 20px; display: flex; align-items: center; gap: 10px; }
     
-    .tech-tag { display: inline-block; padding: 4px 10px; background: rgba(34, 211, 238, 0.1); border-radius: 6px; font-size: 0.8rem; margin: 4px; color: var(--cyan); }
+    /* Image Section */
+    .img-section { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 40px; }
+    .img-container { display: flex; flex-direction: column; gap: 12px; }
+    .screenshot-wrapper { width: 100%; aspect-ratio: 9/16; background: #020617; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.15); cursor: pointer; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: 0 4px 12px rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; }
+    .screenshot-wrapper:hover { border-color: var(--cyan); transform: translateY(-5px) scale(1.02); box-shadow: 0 10px 20px rgba(34, 211, 238, 0.15); }
+    .screenshot { width: 100%; height: 100%; object-fit: contain; }
     
-    @media (max-width: 968px) { .showcase-grid { grid-template-columns: 1fr; } }
+    .desc { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; }
+    .tech-tag { display: inline-block; padding: 6px 12px; background: rgba(34, 211, 238, 0.1); border-radius: 6px; font-size: 0.8rem; margin: 4px; color: var(--cyan); border: 1px solid rgba(34, 211, 238, 0.2); }
+    .btn { display: block; text-align: center; padding: 14px; background: var(--cyan); color: var(--bg); text-decoration: none; border-radius: 8px; font-weight: 800; margin-top: 20px; transition: 0.2s; }
   </style>
 </head>
 <body>
@@ -47,55 +48,104 @@
   </header>
 
   <main class="container">
-    <header class="showcase-header">
-      <span class="role-tag">Lead Developer & System Architect</span>
-      <h1 style="font-size: 3.5rem; margin-top: 10px;">EcoScrap Platform</h1>
-    </header>
+    <h1 style="font-size: 3rem; margin-top: 40px;">EcoScrap Platform</h1>
 
     <div class="showcase-grid">
       <div class="main-content">
+        <h2>Background</h2>
+        <p style="color: var(--text-muted);">EcoScrap was developed by a team of three. As a major contributor, I led the project’s conceptual planning and architectural design, ensuring a robust, scalable foundation for the platform.</p>
+
         <h2>My Contribution</h2>
-        <p>As the Lead Developer, I architected the end-to-end ecosystem. My core involvement included implementing the <strong>real-time logistics engine</strong>, developing the <strong>TensorFlow-based computer vision</strong> model for waste classification, and enforcing <strong>AES-256 encryption</strong> for all sensitive PII, ensuring compliance with data privacy standards.</p>
+        <p>As the Lead Developer, I architected a high-availability ecosystem for waste management. 
+           My key contributions include:
+           <ul style="margin-left: 20px; color: var(--text-muted); margin-top: 10px;">
+             <li><strong>Logistics Engine:</strong> Engineered a real-time reactive logistics system to optimize vehicle routing and collection efficiency using Google Maps API.</li>
+             <li><strong>Computer Vision:</strong> Developed an end-to-end ML pipeline using TensorFlow Lite and MobileNet for on-device waste classification, significantly reducing cloud dependency.</li>
+             <li><strong>Security & Infrastructure:</strong> Implemented AES-256 encryption at the data layer to ensure PII compliance and architected a microservices-based backend with Node.js.</li>
+           </ul>
+        </p>
 
         <h2>Residence Dashboards</h2>
-        <div class="screenshot-grid">
-          <div class="img-slot">User Home / Stats</div>
-          <div class="img-slot">Request Pickup</div>
-          <div class="img-slot">Live Map Tracking</div>
+        <div class="img-section">
+          <div class="img-container">
+            <div class="screenshot-wrapper"><img src="Capstone_GUI/Residence_Dashboard.png" class="screenshot"></div>
+            <p class="desc"><strong>User Home & Stats:</strong> Central hub featuring real-time recycling analytics and impact visualization.</p>
+          </div>
+          <div class="img-container">
+            <div class="screenshot-wrapper"><img src="Capstone_GUI/Residence_CollectorTrash_Pickup.png" class="screenshot"></div>
+            <p class="desc"><strong>Request Pickup:</strong> Robust scheduling interface utilizing geolocation and automated waste categorization.</p>
+          </div>
+          <div class="img-container">
+            <div class="screenshot-wrapper"><img src="Capstone_GUI/Residence_Dashboard_1.png" class="screenshot"></div>
+            <p class="desc"><strong>Live Map Tracking:</strong> Real-time vehicle synchronization providing accurate ETAs for residence pickups.</p>
+          </div>
         </div>
 
         <h2>AI Detection Pipeline</h2>
-        <div class="screenshot-grid">
-          <div class="img-slot">Camera Feed</div>
-          <div class="img-slot">Normalization</div>
-          <div class="img-slot">Classification Result</div>
+        <div class="img-section">
+          <div class="img-container">
+            <div class="screenshot-wrapper"><img src="Capstone_GUI/Residence_AI_Detection.png" class="screenshot"></div>
+            <p class="desc"><strong>AI Camera Feed:</strong> Integrated ML Kit for high-speed object detection with real-time UI overlay.</p>
+          </div>
+          <div class="img-container">
+            <div class="screenshot-wrapper"><img src="Capstone_GUI/Residence_AI_Detection_1.png" class="screenshot"></div>
+            <p class="desc"><strong>Normalization:</strong> Pre-processing pipeline that optimizes images for MobileNet inference accuracy.</p>
+          </div>
+          <div class="img-container">
+            <div class="screenshot-wrapper"><img src="Capstone_GUI/Residence_AI_Detection_2.png" class="screenshot"></div>
+            <p class="desc"><strong>Classification Result:</strong> Provides immediate feedback, confidence thresholds, and disposal instructions.</p>
+          </div>
         </div>
 
         <h2>Operational Dashboards</h2>
-        <div class="screenshot-grid">
-          <div class="img-slot">Junkshop Inventory</div>
-          <div class="img-slot">Admin Console</div>
-          <div class="img-slot">Collector Route Panel</div>
+        <div class="img-section">
+          <div class="img-container">
+            <div class="screenshot-wrapper"><img src="Capstone_GUI/Junkshop_Dashboard.png" class="screenshot"></div>
+            <p class="desc"><strong>Junkshop Inventory:</strong> Dashboard for tracking material volume, inventory fluctuations, and vendor logs.</p>
+          </div>
+          <div class="img-container">
+            <div class="screenshot-wrapper"><img src="Capstone_GUI/Admin_Dashboard.png" class="screenshot"></div>
+            <p class="desc"><strong>Admin Console:</strong> Administrative control center for system-wide health and user governance.</p>
+          </div>
+          <div class="img-container">
+            <div class="screenshot-wrapper"><img src="Capstone_GUI/CollectorDashboard.png" class="screenshot"></div>
+            <p class="desc"><strong>Collector Route Panel:</strong> Command center for managing daily routes, navigation, and service fulfillment.</p>
+          </div>
         </div>
       </div>
 
-      <aside class="sidebar-panel">
-        <h2>Comprehensive Tech Stack</h2>
+     <aside class="sidebar-panel">
+        <h2>Tech Stack</h2>
         <div style="margin-bottom: 30px;">
-          <span class="tech-tag">Flutter (Dart)</span>
+          <span class="tech-tag">Flutter</span>
           <span class="tech-tag">Firebase Auth</span>
           <span class="tech-tag">TensorFlow Lite</span>
-          <span class="tech-tag">Google Maps SDK</span>
-          <span class="tech-tag">AES/RSA Encryption</span>
-          <span class="tech-tag">Node.js/Express Backend</span>
-          <span class="tech-tag">PostgreSQL</span>
-          <span class="tech-tag">Provider State Mgmt</span>
+          <span class="tech-tag">MobileNet</span>
+          <span class="tech-tag">Google ML Kit</span>
+          <span class="tech-tag">Google Maps API</span>
+          <span class="tech-tag">Node.js</span>
+          <span class="tech-tag">AES-256</span>
         </div>
         
         <h2>System Architecture</h2>
-        <p style="font-size: 0.9rem;">Designed as a modular microservices-oriented application. The mobile client leverages reactive state management to handle high-frequency location updates, while the neural engine runs on-device to minimize latency.</p>
+        <p style="font-size: 0.9rem; margin-bottom: 20px;">The architecture utilizes a microservices approach to ensure scalability. By offloading neural inference to the device using TensorFlow Lite, we ensure sub-millisecond response times for users.</p>
         
-        <a href="https://github.com/JurisAlson/EcoScrap" target="_blank" style="display:block; text-align:center; padding: 12px; background:var(--cyan); color:var(--bg); text-decoration:none; border-radius:8px; font-weight:800;">View Full Documentation</a>
+        <h2 style="font-size: 1.2rem;">Project Impact</h2>
+        <ul style="font-size: 0.85rem; color: var(--text-muted); padding-left: 20px; margin-bottom: 25px;">
+          <li><strong>Efficiency:</strong> Streamlined waste sorting workflows, significantly reducing manual processing time.</li>
+          <li><strong>Sustainability:</strong> Optimized collection routes to minimize fuel consumption and carbon footprint.</li>
+          <li><strong>Accessibility:</strong> Created a user-friendly interface that simplifies the recycling process for the general public.</li>
+        </ul>
+
+        <!-- Updated Button Section -->
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <a href="download-page-url.html" class="btn" style="background: #e5edf8; color: var(--bg);">Download App</a>
+          <a href="https://github.com/JurisAlson/EcoScrap" target="_blank" class="btn">View Documentation</a>
+        </div>
+
+        
+
+        
       </aside>
     </div>
   </main>
