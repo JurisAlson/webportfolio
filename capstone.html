@@ -58,10 +58,13 @@
         <h2>My Contribution</h2>
         <p>As the Lead Developer, I architected a high-availability ecosystem for waste management. 
            My key contributions include:
-           <ul style="margin-left: 20px; color: var(--text-muted); margin-top: 10px;">
-             <li><strong>Logistics Engine:</strong> Engineered a real-time reactive logistics system to optimize vehicle routing and collection efficiency using Google Maps API.</li>
-             <li><strong>Computer Vision:</strong> Developed an end-to-end ML pipeline using TensorFlow Lite and MobileNet for on-device waste classification, significantly reducing cloud dependency.</li>
-             <li><strong>Security & Infrastructure:</strong> Implemented AES-256 encryption at the data layer to ensure PII compliance and architected a microservices-based backend with Node.js.</li>
+           <ul style="margin-left: 20px; color: var(--text-muted); margin-top: 10px; display: flex; flex-direction: column; gap: 8px;">
+             <li><strong>Auth System:</strong> Built the entire authentication module, handling secure user registrations, multi-role login flows, and session persistence.</li>
+             <li><strong>Junkshop Dashboard:</strong> Developed the core management interface featuring real-time analytics, transaction visualization, and automated logs.</li>
+             <li><strong>Inventory Management:</strong> Engineered the end-to-end inventory tracking system to monitor stock fluctuations, supplier data, and weight-based classification.</li>
+             <li><strong>System Architecture & Security:</strong> Designed the system architecture with a focus on the <strong>Data Lifecycle</strong>, ensuring secure data handling, persistence, and AES-256 encryption for PII compliance.</li>
+             <li><strong>Logistics Engine:</strong> Optimized vehicle routing and collection efficiency using Google Maps API integration.</li>
+             <li><strong>Computer Vision:</strong> Developed an end-to-end ML pipeline using TensorFlow Lite for on-device waste classification.</li>
            </ul>
         </p>
 
@@ -127,20 +130,25 @@
           <span class="tech-tag">AES-256</span>
         </div>
         
-        <h2>System Architecture</h2>
-        <p style="font-size: 0.9rem; margin-bottom: 20px;">The architecture utilizes a microservices approach to ensure scalability. By offloading neural inference to the device using TensorFlow Lite, we ensure sub-millisecond response times for users.</p>
+<h2>System Architecture</h2>
+        <p style="font-size: 0.9rem; margin-bottom: 20px;">
+          The system follows a <strong>modular microservices architecture</strong> designed for high scalability. 
+          I implemented a comprehensive <strong>data lifecycle management</strong> policy, ensuring data integrity from ingestion and classification to archival. 
+          By offloading neural inference to the device using <strong>TensorFlow Lite</strong> and securing the backend with <strong>Node.js</strong> and <strong>AES-256 encryption</strong>, the platform ensures sub-millisecond response times and robust PII protection.
+        </p>
         
         <h2 style="font-size: 1.2rem;">Project Impact</h2>
         <ul style="font-size: 0.85rem; color: var(--text-muted); padding-left: 20px; margin-bottom: 25px;">
-          <li><strong>Efficiency:</strong> Streamlined waste sorting workflows, significantly reducing manual processing time.</li>
-          <li><strong>Sustainability:</strong> Optimized collection routes to minimize fuel consumption and carbon footprint.</li>
-          <li><strong>Accessibility:</strong> Created a user-friendly interface that simplifies the recycling process for the general public.</li>
+          <li><strong>Operational Transparency:</strong> Replaced manual paper-based logs with a real-time digital dashboard, enabling precise tracking of 4-ton weekly plastic volumes.</li>
+          <li><strong>Economic Stability:</strong> Provided residents and collectors with transparent pricing data, mitigating the income volatility caused by seasonal market fluctuations.</li>
+          <li><strong>Logistical Efficiency:</strong> Through integrated geolocation and automated pickup scheduling, we reduced route redundancy and optimized collection trips.</li>
+          <li><strong>Community Engagement:</strong> Successfully bridged the gap between the informal recycling sector and local households, fostering a data-driven circular economy.</li>
         </ul>
 
         <!-- Updated Button Section -->
         <div style="display: flex; flex-direction: column; gap: 10px;">
-          <a href="download-page-url.html" class="btn" style="background: #e5edf8; color: var(--bg);">Download App</a>
-          <a href="https://github.com/JurisAlson/EcoScrap" target="_blank" class="btn">View Documentation</a>
+          <a href="https://eric11101.github.io/Ecoscrap/" class="btn" style="background: #e5edf8; color: var(--bg);">Download App</a>
+          <a href="" target="_blank" class="btn">View Documentation</a>
         </div>
 
         
