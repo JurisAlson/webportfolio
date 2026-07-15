@@ -45,9 +45,11 @@
     h2 { font-size: 1.6rem; margin-bottom: 24px; color: var(--cyan); display: flex; align-items: center; gap: 10px; }
 
     /* List Items */
-    .item-list { list-style: none; display: grid; gap: 16px; }
+    .item-list { list-style: none; display: grid; gap: 16px; margin-bottom: 24px; }
+    .category-label { font-size: 0.75rem; color: var(--cyan); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; display: block; font-weight: 700; }
     .item { padding: 16px; border: 1px solid rgba(148, 163, 184, 0.1); border-radius: 12px; display: flex; align-items: center; gap: 16px; transition: background 0.3s; }
     .item:hover { background: rgba(34, 211, 238, 0.05); }
+    .item a { text-decoration: none; color: inherit; display: flex; align-items: center; gap: 16px; width: 100%; }
     .item i { color: var(--green); font-size: 1.2rem; }
     .item h4 { margin-bottom: 2px; }
     .item p { font-size: 0.85rem; color: var(--muted); }
@@ -59,11 +61,7 @@
     <nav class="nav container">
       <a href="index.html" class="brand">JA | Juris Alson</a>
       <ul class="nav-links">
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#experience">Experiences</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="capstone.html">Capstone</a></li>
-        <li><a href="education.html">Education</a></li>
+        <li><a href="index.html"><i class="fa-solid fa-arrow-left"></i> Back to Portfolio</a></li>
       </ul>
     </nav>
   </header>
@@ -83,25 +81,35 @@
         </div>
 
         <div class="card">
-          <h2><i class="fa-solid fa-chalkboard-user"></i> Seminars </h2>
+          <h2><i class="fa-solid fa-chalkboard-user"></i> Seminars</h2>
           <ul class="item-list">
-            <li class="item"><i class="fa-solid fa-users"></i><div><h4>[Insert Seminar Name]</h4><p>Organizer | Date</p></div></li>
-            <li class="item"><i class="fa-solid fa-users"></i><div><h4>[Insert Seminar Name]</h4><p>Organizer | Date</p></div></li>
+            <li class="item"><a href="asset/Beyond the Breach Leadership and Cybersecurity in the age of digital transformation.pdf"><i class="fa-solid fa-users"></i><div><h4>Beyond the Breach</h4><p>Leadership & Cyber</p></div></a></li>
+            <li class="item"><a href="asset/CybersocPH_Alson, Juris Ralph.pdf"><i class="fa-solid fa-users"></i><div><h4>Beyond the Code</h4><p>Cloud-Native Era</p></div></a></li>
+            <li class="item"><a href="asset/Head in the Clouds Exploring How AI Transforms the Cloud Computing Landscape.pdf"><i class="fa-solid fa-users"></i><div><h4>Head in the Clouds</h4><p>AI in Cloud Computing</p></div></a></li>
           </ul>
         </div>
       </div>
 
       <div class="card">
         <h2><i class="fa-solid fa-certificate"></i> Certificates</h2>
+        
+        <span class="category-label">Cybersecurity</span>
         <ul class="item-list">
-          <li class="item"><i class="fa-solid fa-shield-halved"></i><div><h4>Ethical Hacking - Cisco</h4><p>Issued: 03/29/2025</p></div></li>
-          <li class="item"><i class="fa-solid fa-network-wired"></i><div><h4>CCNA: Intro to Networks</h4><p>Issued: 02/07/2025</p></div></li>
-          <li class="item"><i class="fa-solid fa-network-wired"></i><div><h4>CCNA: Switching, Routing & Wireless</h4><p>Issued: 07/21/2025</p></div></li>
-          <li class="item"><i class="fa-solid fa-cloud"></i><div><h4>Google: Cloud Foundations</h4><p>Issued: 03/21/2025</p></div></li>
-          <li class="item"><i class="fa-solid fa-lock"></i><div><h4>Google: Cybersecurity Professional</h4><p>Issued: 06/17/2026</p></div></li>
-          <li class="item"><i class="fa-solid fa-code"></i><div><h4>IBM: Full Stack Developer</h4><p class="status">In Progress</p></div></li>
-          <li class="item"><i class="fa-solid fa-server"></i><div><h4>Azure DevOps: Builds</h4><p>Issued: 05/06/2026</p></div></li>
-          <li class="item"><i class="fa-solid fa-terminal"></i><div><h4>Linux File Management</h4><p>Issued: 05/05/2026</p></div></li>
+          <li class="item"><a href="asset/Ethical Hacker.pdf"><i class="fa-solid fa-shield-halved"></i><div><h4>Ethical Hacking</h4><p>Cisco</p></div></a></li>
+          <li class="item"><a href="asset/Google cyber security.pdf"><i class="fa-solid fa-lock"></i><div><h4>Cybersecurity Professional</h4><p>Google</p></div></a></li>
+        </ul>
+
+        <span class="category-label">Networking & Infrastructure</span>
+        <ul class="item-list">
+          <li class="item"><a href="asset/CCNA Introduction to Networks.pdf"><i class="fa-solid fa-network-wired"></i><div><h4>CCNA: Intro to Networks</h4><p>Cisco</p></div></a></li>
+          <li class="item"><a href="asset/CCNA Switching, Routing, and Wireless Essentials.pdf"><i class="fa-solid fa-network-wired"></i><div><h4>CCNA: Routing & Switching</h4><p>Cisco</p></div></a></li>
+          <li class="item"><a href="asset/Azure Devops.pdf"><i class="fa-solid fa-server"></i><div><h4>Azure DevOps</h4><p>Microsoft</p></div></a></li>
+          <li class="item"><a href="asset/Linux Certificate.pdf"><i class="fa-solid fa-terminal"></i><div><h4>Linux Administration</h4><p>OS Fundamentals</p></div></a></li>
+        </ul>
+
+        <span class="category-label">Development</span>
+        <ul class="item-list">
+          <li class="item"><div style="display:flex; align-items:center; gap:16px;"><i class="fa-solid fa-code"></i><div><h4>IBM: Full Stack Developer</h4><p class="status">In Progress</p></div></div></li>
         </ul>
       </div>
     </div>
